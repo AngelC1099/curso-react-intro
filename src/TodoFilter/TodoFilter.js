@@ -1,14 +1,20 @@
 import React from 'react'
 import './TodoFilter.css'
+import { TodoContext } from '../TodoContext/TodoContext';
 
-function TodoFilter(props) {
+function TodoFilter() {
+  const {
+    searchValue,
+    setSearchValue
+  } = React.useContext(TodoContext);
+
   return (
     <input
       placeholder="Cortar cebolla"
       className='TodoFilter'
-      value={props.searchValue}
+      value={searchValue}
       onChange={(event) => {
-        props.setSearchValue(event.target.value)
+        setSearchValue(event.target.value)
       }}
     />
   )
