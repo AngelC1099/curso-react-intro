@@ -1,32 +1,14 @@
 import React from 'react';
-import { TodoTitle } from './TodoTitle';
-import { TodoFilter } from './TodoFilter';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
-
-const defaultTodos = [
-  {
-    text: "Cortar cebolla",
-    completed: true
-  },
-  {
-    text: "Cortar ajo",
-    completed: true
-  },
-  {
-    text: "Calentar comida",
-    completed: false
-  },
-  {
-    text: "Comer con ganas",
-    completed: false
-  },
-]
+import { TodoTitle } from '../TodoTitle/TodoTitle';
+import { TodoFilter } from '../TodoFilter/TodoFilter';
+import { TodoList } from '../TodoList/TodoList';
+import { TodoItem } from '../TodoItem/TodoItem';
+import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton';
+import { useLocalStorage } from './useLocalStorage';
 
 function App() {
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = React.useState('');
-  const [todos, setTodos] = React.useState(defaultTodos);
 
   const searchedTodos = todos.filter(todo => {
     return todo.text.toLowerCase().includes(searchValue.toLowerCase());
@@ -38,7 +20,7 @@ function App() {
 
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
 
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   const deleteTodo = (text) => {
@@ -47,7 +29,7 @@ function App() {
 
     newTodos.splice(todoIndex, 1);
 
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   return (
