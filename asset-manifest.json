@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/D:/Proyectos/React/curso-react-intro/build/static/css/main.499c63cb.css",
-    "main.js": "/D:/Proyectos/React/curso-react-intro/build/static/js/main.58845c2d.js",
-    "index.html": "/D:/Proyectos/React/curso-react-intro/build/index.html",
-    "main.499c63cb.css.map": "/D:/Proyectos/React/curso-react-intro/build/static/css/main.499c63cb.css.map",
-    "main.58845c2d.js.map": "/D:/Proyectos/React/curso-react-intro/build/static/js/main.58845c2d.js.map"
+    "main.css": "/curso-react-intro/static/css/main.499c63cb.css",
+    "main.js": "/curso-react-intro/static/js/main.58845c2d.js",
+    "index.html": "/curso-react-intro/index.html",
+    "main.499c63cb.css.map": "/curso-react-intro/static/css/main.499c63cb.css.map",
+    "main.58845c2d.js.map": "/curso-react-intro/static/js/main.58845c2d.js.map"
   },
   "entrypoints": [
     "static/css/main.499c63cb.css",
